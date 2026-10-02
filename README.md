@@ -6,7 +6,7 @@ like natural language, the model infers the source in context and predicts
 what comes next.
 
 This repository is the model, its `transformers` integration, and the byte API.
-The weights are at https://huggingface.co/lennartcb/pflm1.
+The weights are at [hf.co/lennartcb/pflm1](https://hf.co/lennartcb/pflm1).
 
 ## Install
 
