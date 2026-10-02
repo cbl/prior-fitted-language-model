@@ -26,8 +26,8 @@ are at [github.com/cbl/prior-fitted-language-model](https://github.com/cbl/prior
 pip install "pflm1[hf]"
 ```
 
-The model has never seen prime numbers, yet it gets better at predicting them
-the more it reads.
+**Watch it learn.** The model has never seen prime numbers, yet it gets better
+at predicting them the more it reads.
 
 ```python
 import pflm1
