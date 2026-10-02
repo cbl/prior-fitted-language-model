@@ -11,19 +11,23 @@ tags:
 
 # PFLM: A Prior-Fitted Language Model
 
-PFLM is a 300M parameter byte-level model pretrained only on samples from a
-synthetic non-linguistic prior. Given a prefix of a structured byte sequence
-like natural language, the model infers the source in context and predicts
-what comes next.
+PFLM is a 300M-parameter byte-level model pretrained only on samples from a
+synthetic non-linguistic prior. Given the start of a byte sequence, such as a
+text in a language it has never seen, it infers the source in context and
+predicts what comes next.
 
 This repository holds the weights and their configuration. The model code
-and the byte-level API are at https://github.com/cbl/prior-fitted-language-model.
+and a byte-level API for scoring streams and measuring in-context learning
+are at [github.com/cbl/prior-fitted-language-model](https://github.com/cbl/prior-fitted-language-model).
 
 ## Quickstart
 
 ```sh
 pip install "pflm1[hf]"
 ```
+
+The model has never seen prime numbers, yet it gets better at predicting them
+the more it reads.
 
 ```python
 import pflm1
@@ -44,8 +48,8 @@ bits = model.bits_per_byte(text)                 # bits per byte, one entry each
 print(bits[:500].mean(), bits[-500:].mean())     # the first 500 digits vs. the last 500
 ```
 
-Importing `pflm1` registers the architecture with `transformers`. The
-model consumes raw bytes: `bits_per_byte` scores a byte string,
-`model.stream()` scores bytes as they arrive with the state carried, and
-`model.generate_bytes(context)` samples a continuation. `AutoTokenizer`
-maps each UTF-8 byte to its own id and adds no special tokens.
+Importing `pflm1` registers the architecture with `transformers`. The model
+reads raw bytes. `bits_per_byte` scores a byte string, `model.stream()`
+scores bytes as they arrive and keeps the state between calls, and
+`model.generate_bytes(context)` samples a continuation. `AutoTokenizer` maps
+each UTF-8 byte to its own id and adds no special tokens.
