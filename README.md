@@ -22,7 +22,7 @@ pip install flash-attn causal-conv1d    # wheels matching your CUDA build
 ## Use
 
 ```python
-import pflm1  # registers the model with transformers
+import pflm1
 from transformers import AutoModelForCausalLM
 
 model = AutoModelForCausalLM.from_pretrained("lennartcb/pflm1", dtype="bfloat16").cuda().eval()

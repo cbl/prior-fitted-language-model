@@ -47,9 +47,3 @@ text = primes(10_000)                            # "0011010100..." ten thousand 
 bits = model.bits_per_byte(text)                 # bits per byte, one entry each
 print(bits[:500].mean(), bits[-500:].mean())     # the first 500 digits vs. the last 500
 ```
-
-Importing `pflm1` registers the architecture with `transformers`. The model
-reads raw bytes. `bits_per_byte` scores a byte string, `model.stream()`
-scores bytes as they arrive and keeps the state between calls, and
-`model.generate_bytes(context)` samples a continuation. `AutoTokenizer` maps
-each UTF-8 byte to its own id and adds no special tokens.
