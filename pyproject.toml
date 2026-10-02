@@ -1,0 +1,43 @@
+[project]
+name = "pflm1"
+version = "0.1.0"
+description = "Prior-fitted language model: a byte-level model that learns a language in context, trained on no natural language."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Lennart Carstens-Behrens" }, { name = "Holger Fröhlich" }]
+keywords = ["language-model", "prior-fitted-networks", "in-context-learning", "byte-level"]
+urls = { Repository = "https://github.com/cbl/prior-fitted-language-model", "Model" = "https://huggingface.co/lennartcb/pflm1" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.7.1",
+]
+
+[project.optional-dependencies]
+# ``AutoModelForCausalLM``, ``AutoTokenizer``, ``generate`` with a stateful
+# cache, and trust_remote_code exports. The pure model never imports it.
+hf = ["transformers>=5.15"]
+# Triton kernel for the gated delta-rule scan (fla's chunk_gated_delta_rule).
+# ``flash-attn`` and ``causal_conv1d`` are CUDA-version-pinned wheels and must
+# be installed manually; the model falls back to exact reference paths
+# without them.
+kernels = ["flash-linear-attention"]
+
+[dependency-groups]
+dev = ["pytest>=7", "transformers>=5.15"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pflm1*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

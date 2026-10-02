@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this model or code, please cite the paper below."
+title: "PFLM: A Prior-Fitted Language Model"
+type: software
+version: 0.1.0
+license: Apache-2.0
+repository-code: https://github.com/cbl/prior-fitted-language-model
+url: https://huggingface.co/lennartcb/pflm1
+authors:
+  - family-names: Carstens-Behrens
+    given-names: Lennart
+  - family-names: Fröhlich
+    given-names: Holger
+preferred-citation:
+  type: article
+  title: "Learning to Learn a Language"
+  year: 2026
+  authors:
+    - family-names: Carstens-Behrens
+      given-names: Lennart
+    - family-names: Fröhlich
+      given-names: Holger
