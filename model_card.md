@@ -47,3 +47,16 @@ text = primes(10_000)                            # "0011010100..." ten thousand 
 bits = model.bits_per_byte(text)                 # bits per byte, one entry each
 print(bits[:500].mean(), bits[-500:].mean())     # the first 500 digits vs. the last 500
 ```
+
+## Citation
+
+[Learning to Learn a Language](https://arxiv.org/abs/2610.05879)
+
+```bibtex
+@article{carstensbehrens2026learning,
+  title   = {Learning to Learn a Language},
+  author  = {Carstens-Behrens, Lennart and Fr{\"o}hlich, Holger},
+  journal = {arXiv preprint arXiv:2610.05879},
+  year    = {2026},
+}
+```

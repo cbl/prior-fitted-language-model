@@ -8,7 +8,7 @@ license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "Lennart Carstens-Behrens" }, { name = "Holger Fröhlich" }]
 keywords = ["language-model", "prior-fitted-networks", "in-context-learning", "byte-level"]
-urls = { Repository = "https://github.com/cbl/prior-fitted-language-model", "Model" = "https://huggingface.co/lennartcb/pflm1" }
+urls = { Repository = "https://github.com/cbl/prior-fitted-language-model", "Model" = "https://huggingface.co/lennartcb/pflm1", "Paper" = "https://arxiv.org/abs/2610.05879" }
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",

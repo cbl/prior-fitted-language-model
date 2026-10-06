@@ -89,7 +89,16 @@ exactly the same result as one forward pass, and the byte API relies on this.
 
 ## Citation
 
-See `CITATION.cff`. Paper: *Learning to Learn a Language* (arXiv link to follow).
+[Learning to Learn a Language](https://arxiv.org/abs/2610.05879)
+
+```bibtex
+@article{carstensbehrens2026learning,
+  title   = {Learning to Learn a Language},
+  author  = {Carstens-Behrens, Lennart and Fr{\"o}hlich, Holger},
+  journal = {arXiv preprint arXiv:2610.05879},
+  year    = {2026},
+}
+```
 
 ## License
 
